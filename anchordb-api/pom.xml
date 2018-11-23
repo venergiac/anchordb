@@ -1,0 +1,16 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.anchordb</groupId>
+    <artifactId>anchordb</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>org.anchordb.api</groupId>
+  <artifactId>anchordb-api</artifactId>
+  <name>anchordb-api</name>
+  <description>anchordb-api</description>
+  
+
+  
+  
+</project>
