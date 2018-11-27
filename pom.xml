@@ -13,6 +13,7 @@
 
 	<modules>
 		<module>anchordb-api</module>
+		<module>anchordb-impl</module>
 	</modules>
 
 	<properties>
