@@ -1,6 +1,7 @@
 package org.anchordb.impl.asset;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
@@ -18,9 +19,10 @@ public class GenericAsset implements Asset {
 	private String name;
 	private boolean valid;
 	private Date timestamp;
+	private Set<Tag> tags;
+	private Set<Attribute> attributes;
+	private Set<Relation> relations;
 
-	
-	
 	
 	GenericAsset(UUID uuid, String name, AssetClass type, Asset parent, boolean valid) {
 		super();
@@ -39,14 +41,13 @@ public class GenericAsset implements Asset {
 
 	@Override
 	public void addAttribute(Attribute attribute) {
-		// TODO Auto-generated method stub
-		
+		if (attributes==null) attributes = new HashSet<Attribute>();
+		attributes.add(attribute);
 	}
 
 	@Override
 	public Set<Attribute> getAttributes() {
-		// TODO Auto-generated method stub
-		return null;
+		return Set.copyOf(attributes);
 	}
 
 	@Override
@@ -77,7 +78,7 @@ public class GenericAsset implements Asset {
 
 	@Override
 	public Date getTimestamp() {
-		return null;
+		return timestamp;
 	}
 
 	@Override
@@ -87,20 +88,18 @@ public class GenericAsset implements Asset {
 
 	@Override
 	public Set<Relation> getRelations() {
-		// TODO Auto-generated method stub
-		return null;
+		return relations;
 	}
 
 	@Override
 	public Set<Tag> getTags() {
-		// TODO Auto-generated method stub
-		return null;
+		return tags;
 	}
 
 	@Override
 	public void addTag(Tag tag) {
-		// TODO Auto-generated method stub
-		
+		if (tags==null) tags = new HashSet<Tag>();
+		tags.add(tag);
 	}
 
 }

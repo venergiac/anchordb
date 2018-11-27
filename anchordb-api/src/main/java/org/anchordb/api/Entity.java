@@ -30,11 +30,5 @@ abstract interface Entity {
    
    public static final String UOM = "uom"; 
 	
-   public enum AttributeType {
-		String,
-		JSON,
-		Shared,
-		Numeric,
-		Array
-   }
+
 }
