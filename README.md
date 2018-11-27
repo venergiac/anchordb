@@ -72,7 +72,6 @@ Historical attribute:
 * include array of Values
 * belongs Asset Instance
 
-
 Shared attribute:
 * include Id, Name, Type, Value
 * belongs Asset Instance
@@ -110,7 +109,6 @@ Tag  (aka: tag):
 
 ## APIs
 TBD
-
 
 ## Architecture
 
