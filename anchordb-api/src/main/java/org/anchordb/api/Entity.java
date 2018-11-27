@@ -4,6 +4,11 @@ import java.util.Date;
 import java.util.Set;
 import java.util.UUID;
 
+/**
+ * Basic private interface
+ * @author giacomoveneri
+ *
+ */
 abstract interface Entity {
 
 	public String getName();

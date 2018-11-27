@@ -13,6 +13,7 @@ public interface Asset extends EntityInstance<AssetClass> {
 
 	public Set<Tag> getTags();
 	
+	public void addTag(Tag tag);
 	
 
 }

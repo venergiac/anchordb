@@ -1,5 +1,10 @@
 package org.anchordb.api.exception;
 
+/**
+ * generic exception
+ * @author giacomoveneri
+ *
+ */
 public class AnchorException extends Exception {
 
 	public AnchorException(String message, Throwable cause) {

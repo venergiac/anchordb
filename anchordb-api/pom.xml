@@ -5,8 +5,7 @@
     <artifactId>anchordb</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>org.anchordb.api</groupId>
-  <artifactId>anchordb-api</artifactId>
+  <artifactId>org.anchordb.api</artifactId>
   <name>anchordb-api</name>
   <description>anchordb-api</description>
   

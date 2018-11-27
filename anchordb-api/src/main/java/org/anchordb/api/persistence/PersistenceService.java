@@ -4,6 +4,13 @@ import java.util.UUID;
 
 import org.anchordb.api.exception.AnchorException;
 
+/** 
+ *  CRUD interface
+ * @author giacomoveneri
+ *
+ * @param <Q>
+ * @param <N>
+ */
 public interface PersistenceService<Q,N> {
 
 	public N find(Q q) throws AnchorException;

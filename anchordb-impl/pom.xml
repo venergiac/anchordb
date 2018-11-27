@@ -5,8 +5,17 @@
     <artifactId>anchordb</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>org.anchordb.impl</groupId>
-  <artifactId>anchordb-impl</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+
+  <artifactId>org.anchordb.impl</artifactId>
   <name>anchordb-impl</name>
+  
+  
+  <dependencies>
+  	<dependency>
+  		<artifactId>org.anchordb.api</artifactId>
+  		<groupId>${parent.groupId}</groupId>
+  		<version>${version}</version>
+  	</dependency>
+  </dependencies>
+  
 </project>
