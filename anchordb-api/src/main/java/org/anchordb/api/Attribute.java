@@ -11,7 +11,7 @@ public interface Attribute<T> extends Entity {
 	
 	public AttributeType getType();
 	public T getValue();
-	
+	public void setValue(T value);
 }
 
 
