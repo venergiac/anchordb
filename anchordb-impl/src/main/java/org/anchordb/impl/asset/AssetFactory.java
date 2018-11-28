@@ -7,11 +7,25 @@ import org.anchordb.api.AssetClass;
 
 public class AssetFactory {
 
-	public Asset createAsset(AssetClass type, String name) {
-		return new GenericAsset(UUID.randomUUID(),
+	public static Asset createAsset(AssetClass type, String name, Asset parent) {
+		GenericAsset asset = new GenericAsset(UUID.randomUUID(),
 				name,
 				type,
-				null,
+				parent,
 				true);
+		
+		//TODO: build attributes
+		
+		return asset;
+	}
+	
+	public static AssetClass createAssetClass(String name) {
+		GenericAssetClass clazz = new GenericAssetClass(UUID.randomUUID(),
+				name,
+				true);
+		
+		//TODO: build attributes
+		
+		return clazz;
 	}
 }

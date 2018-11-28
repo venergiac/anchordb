@@ -9,7 +9,7 @@ import java.util.UUID;
  * @author giacomoveneri
  *
  */
-abstract interface Entity {
+public abstract interface Entity {
 
 	public String getName();
 	public void setName(String name);
