@@ -2,6 +2,7 @@ package org.anchordb.api.persistence;
 
 import java.util.UUID;
 
+import org.anchordb.api.Entity;
 import org.anchordb.api.exception.AnchorException;
 
 /** 
@@ -11,7 +12,7 @@ import org.anchordb.api.exception.AnchorException;
  * @param <Q>
  * @param <N>
  */
-public interface PersistenceService<Q,N> {
+public interface PersistenceService<Q, N extends Entity> {
 
 	public N find(Q q) throws AnchorException;
 	public UUID create(N n) throws AnchorException;
