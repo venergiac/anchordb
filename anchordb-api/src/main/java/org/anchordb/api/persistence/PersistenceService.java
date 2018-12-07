@@ -18,6 +18,6 @@ public interface PersistenceService<Q, N extends Entity> {
 	public UUID create(N n) throws AnchorException;
 	public N update(N n) throws AnchorException;
 	public void delete(N n) throws AnchorException;
-	public N get(UUID id) throws AnchorException;
+	public N get(UUID id);
 	
 }

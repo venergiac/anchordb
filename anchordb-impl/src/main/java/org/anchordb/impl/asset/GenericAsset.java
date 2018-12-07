@@ -33,6 +33,18 @@ public class GenericAsset implements Asset {
 		this.valid = valid;
 		this.timestamp = new Date();
 	}
+	
+	GenericAsset(UUID uuid, String name, AssetClass type, Asset parent, boolean valid, Set<Tag> tags, Set<Attribute> attributes) {
+		super();
+		this.uuid = uuid;
+		this.name = name;
+		this.type = type;
+		this.parent = parent;
+		this.valid = valid;
+		this.timestamp = new Date();
+		this.attributes = attributes;
+		this.tags = tags;
+	}
 
 	@Override
 	public AssetClass getType() {
@@ -101,5 +113,13 @@ public class GenericAsset implements Asset {
 		if (tags==null) tags = new HashSet<Tag>();
 		tags.add(tag);
 	}
+
+	@Override
+	public String toString() {
+		return "GenericAsset [parent=" + parent + ", uuid=" + uuid + ", type=" + type + ", name=" + name + ", valid="
+				+ valid + ", timestamp=" + timestamp + "]";
+	}
+	
+	
 
 }

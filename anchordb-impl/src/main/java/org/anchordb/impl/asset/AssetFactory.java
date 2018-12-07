@@ -1,9 +1,12 @@
 package org.anchordb.impl.asset;
 
+import java.util.Set;
 import java.util.UUID;
 
 import org.anchordb.api.Asset;
 import org.anchordb.api.AssetClass;
+import org.anchordb.api.Attribute;
+import org.anchordb.api.Tag;
 
 public class AssetFactory {
 
@@ -14,7 +17,29 @@ public class AssetFactory {
 				parent,
 				true);
 		
-		//TODO: build attributes
+		return asset;
+	}
+	
+	public static Asset createAsset(AssetClass type, String name, Asset parent, Set<Tag> tags, Set<Attribute> attributes) {
+		GenericAsset asset = new GenericAsset(UUID.randomUUID(),
+				name,
+				type,
+				parent,
+				true,
+				tags, 
+				attributes);
+		
+		return asset;
+	}
+	
+	public static Asset copyAsset(Asset source, Set<Tag> tags, Set<Attribute> attributes) {
+		GenericAsset asset = new GenericAsset(source.getUid(),
+				source.getName(),
+				source.getType(),
+				source.getParent(),
+				source.isValid(),
+				tags, 
+				attributes);
 		
 		return asset;
 	}
@@ -23,8 +48,6 @@ public class AssetFactory {
 		GenericAssetClass clazz = new GenericAssetClass(UUID.randomUUID(),
 				name,
 				true);
-		
-		//TODO: build attributes
 		
 		return clazz;
 	}
