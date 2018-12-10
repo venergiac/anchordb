@@ -55,12 +55,13 @@ public class KeyValuePersistence implements PersistenceService<Query, Entity> {
 	}
 
 	public UUID createObject(Tag c) {
-
-		return null;
+		tags.put(c.getUid(), c);
+		return c.getUid();
 	}
 
 	public UUID createObject(Attribute c) {
-		return null;
+		attributes.put(c.getUid(), c);
+		return c.getUid();
 	}
 
 	public UUID createObject(AssetClass c) {
@@ -78,13 +79,12 @@ public class KeyValuePersistence implements PersistenceService<Query, Entity> {
 
 		// save relations
 		Optional.ofNullable(pUid).ifPresent(p -> childsAsset.put(a.getUid(), p));
-		System.out.println(childsAsset);
 
 		// save attributes
-		// TODO
+		a.getAttributes().forEach( t -> { UUID uuid= createObject(t); attributesAsset.put(uuid, a.getUid());});
 
 		// save tags
-		// TODO
+		a.getTags().forEach( t -> { UUID uuid= createObject(t); attributesAsset.put(uuid, a.getUid());});
 
 		// finally save object
 		assets.put(a.getUid(), a);
@@ -131,10 +131,10 @@ public class KeyValuePersistence implements PersistenceService<Query, Entity> {
 		childsAsset.remove(asset.getUid());
 
 		// remove all attributes
-		// TODO: relations unsupported
+		asset.getAttributes().forEach(t -> deleteObject(t));
 
 		// remove all tags
-		// TODO: relations unsupported
+		asset.getTags().forEach(t -> deleteObject(t));
 
 		// now remove asset
 		assets.remove(asset.getUid());
